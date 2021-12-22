@@ -1,0 +1,33 @@
+.features__box {
+    background-color: var(--primary-br-btn-color);
+    width: 270px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+}
+.features__item {
+    width: 270px;
+}
+
+.features__title {
+    font-weight: 700;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--title-text-color);
+    margin-bottom: 10px;
+}
+.features__text {
+    width: 270px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+}
