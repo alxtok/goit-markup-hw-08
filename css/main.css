@@ -812,23 +812,7 @@ body {
   margin-top: 50px;
 }
 
-@media screen and (min-width: 480px) {
-  .clients {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1199px) {
   .clients {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -868,38 +852,37 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  /* &:not(:last-child) {
-        margin-right: 30px;
-    } */
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 767px) {
   .clients__item {
     -ms-flex-preferred-size: calc(100% / 2 - 30px);
         flex-basis: calc(100% / 2 - 30px);
   }
-  .clients__item:nth-of-type(2n+1) {
-    margin-left: 0px;
+  .clients__item:nth-of-type(2n) {
+    margin-left: 30px;
   }
-  .clients__item:nth-of-type(-n+2) {
-    margin-top: 0px;
+  .clients__item:nth-of-type(n+3) {
+    margin-top: 30px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .clients__item {
     -ms-flex-preferred-size: calc(100% / 3 - 30px);
         flex-basis: calc(100% / 3 - 30px);
-    margin-left: 0px;
   }
-  .clients__item:nth-of-type(-n+3) {
-    margin-top: 0px;
+  .clients__item:nth-of-type(n+4) {
+    margin-top: 30px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .clients__item {
     margin-top: 0px;
+  }
+  .clients__item:not(:last-child) {
+    margin-right: 30px;
   }
 }
 
@@ -1153,13 +1136,33 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .filter {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .filter__item:not(:last-child) {
   margin-right: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .filter__item:nth-of-type(n+4) {
+    margin-top: 15px;
+  }
 }
 
 .filter__button {
@@ -1193,31 +1196,71 @@ footer {
       flex-wrap: wrap;
 }
 
-.portfolio .portfolio__item:nth-of-type(3n+1) {
-  margin-left: 0px;
+@media screen and (max-width: 767px) {
+  .portfolio {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
-.portfolio .portfolio__item:nth-of-type(3n) {
-  margin-right: 0px;
+@media screen and (min-width: 1200px) {
+  .portfolio {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
-.portfolio .portfolio__item:nth-of-type(-n+3) {
-  margin-top: 0px;
+@media screen and (max-width: 767px) {
+  .portfolio__item {
+    width: 450px;
+    -ms-flex-preferred-size: calc(100% / 1 - 30px);
+        flex-basis: calc(100% / 1 - 30px);
+  }
+  .portfolio__item:not(:first-child) {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .portfolio__item {
+    -ms-flex-preferred-size: calc(100% / 2 - 30px);
+        flex-basis: calc(100% / 2 - 30px);
+    width: 330px;
+  }
+  .portfolio__item:nth-of-type(2n) {
+    margin-left: 30px;
+  }
+  .portfolio__item:nth-of-type(n+3) {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio__item {
+    width: 370px;
+    margin-left: 30px;
+  }
+  .portfolio__item:nth-of-type(3n+1) {
+    margin-left: 0px;
+  }
+  .portfolio__item:nth-of-type(n+4) {
+    margin-top: 30px;
+  }
+}
+
+.portfolio__item img {
+  width: 100%;
 }
 
 .portfolio__tamb {
+  width: auto;
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 24px;
   background: var(--main-wite-color);
   border: 1px solid #EEEEEE;
-}
-
-.portfolio__item {
-  margin-left: 30px;
-  margin-top: 30px;
-  -ms-flex-preferred-size: calc((100% - 90px) / 3);
-      flex-basis: calc((100% - 90px) / 3);
 }
 
 .portfolio__link {
