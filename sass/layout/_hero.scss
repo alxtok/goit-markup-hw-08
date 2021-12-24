@@ -6,10 +6,9 @@
     background-position: center;
     background-size: cover;
     text-align: center;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 0 auto;
-    background-image: auto;
-    
+    width: 100%;
 }
 
 .hero__title {
@@ -19,6 +18,10 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color:var(--main-wite-color);
+    @media screen and (max-width: 768px) {
+        font-size: 26px;
+        line-height: 1.61;
+    }
 }
 
 .hero__button{
