@@ -4,9 +4,10 @@
 .header__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100vw;
 }
-.menu {
+.menu-l {
     display: flex;
     align-items: center;
 
@@ -20,7 +21,7 @@
     letter-spacing: 0.03em;
     display: block;
     padding: 24px 0 25px 0px;
-    margin-right: 70px;
+    /* margin-right: 70px; */
 }
 .logo__blue {
     color: var(--accent-color);
@@ -28,9 +29,11 @@
 
 
 .site-nav {
-display: flex;
+display: none;
 justify-content: space-between;
 padding-top: 24px 0 25px 0;
+@media screen and (min-width: 768px){
+    display: flex;}
 }
 
 .site-nav__item {
@@ -67,7 +70,9 @@ padding-top: 24px 0 25px 0;
     border-radius: 2px;
 }
 .contacts {
+    @media screen and (min-width: 1200px) {
     display: flex;
+    }
 }
 
 .contacts__icon {
@@ -76,12 +81,23 @@ padding-top: 24px 0 25px 0;
 }
 
 
+
 .contacts__item:not(:last-child) {
+@media screen and (min-width: 1199px){
     margin-right: 50px;
+}
 }
 
 .contacts__link {
-    display: flex;
+    display: none;
+    @media screen and (min-width: 768px) and (max-width: 1199px){
+        display: flex;
+        margin-top: 10px;
+    }
+    @media screen and (min-width: 1200px){
+        display: flex;
+        margin-top: 10px;
+    }
     align-items: center;
     line-height: 1.17;
     letter-spacing: 0.03em;
@@ -91,4 +107,125 @@ padding-top: 24px 0 25px 0;
         color: var(--accent-color);
     }
 }
+.open-mob-menu {
+    background-color: transparent;
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        margin: -1px;
+    
+    }
+}
+.menu__icon {
+    background-color: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover, &:focus {
+        color: var(--accent-color);
+        fill: var(--accent-color);
+    }
+    cursor: pointer;
+    
+}
 
+
+.mob-menu {
+    position: fixed;
+    background-color: #fff;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.mob-menu__close {
+    display: block;
+    margin-left: auto;
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover, &:focus {
+        fill: var(--accent-color);}
+}
+
+.mob-menu__site-nav__item {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:not(:last-child) {
+        margin-bottom: 32px;
+    }
+    font-weight: 500;
+    font-size: 40px;
+    line-height:1.17;
+    letter-spacing: 0.02em;
+    color: var(--title-text-color);
+    &:hover, &:focus {
+        color: var(--accent-color);}
+}
+.mob-menu__site-nav__link--active {
+    color: var(--accent-color);
+}
+.mob-menu__contacts {
+    margin-bottom: 64px;
+}
+.mob-menu__contacts__phone {
+    cursor: pointer;
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+}
+.mob-menu__contacts__mail {
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    &:hover, &:focus {
+        color: var(--accent-color);}
+}
+.mob-menu__social {
+    display: flex;
+    margin-bottom: 48px;
+}
+.mob-menu__social-item {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+    &:not(:first-child){
+        margin-left: 20px;
+    }
+}
+.mob-menu__social-item::after {
+    content: "";
+    height: 22px;
+    width: 2px;
+    background-color: rgba(223, 218, 218, 0.2);
+    position: relative;
+    display: block;
+    border: 1px solid rgba(223, 218, 218, 0.2);
+    top: -22px;
+    right: 10px;
+}
