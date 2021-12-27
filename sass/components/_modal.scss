@@ -42,6 +42,9 @@
     letter-spacing: 0.03em;
     color: var(--title-text-color);
     margin-bottom: 12px;
+    @media screen and (max-width: 767px) {
+        line-height: 1.5;
+    }
 }
 
 .modal__close {
@@ -162,6 +165,10 @@
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
+    @media screen and (max-width: 767px) {
+        font-size: 12px;
+        line-height: 1.16;
+    }
 }
 .modal-form__button {
     color: var(--main-wite-color);
